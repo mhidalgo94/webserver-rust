@@ -39,9 +39,8 @@ cargo build
 ```
 ## Example Requests
  
- ### GET /echo/{str}
-
- ```
+### GET /echo/{str}
+```
 curl -v -H "Accept-Encoding: gzip" http://localhost:4221/echo/abc
 ```
 
@@ -64,3 +63,9 @@ If the request contains Accept-Encoding: gzip:
 ```bash
 curl -v -H "Accept-Encoding: gzip" http://localhost:4221/echo/abc
 ```
+The server responds with:
+- `200 OK`
+- *Content-Type:* text/plain
+- *Content-Encoding:* gzip
+- *Content-Length:* [compressed body size]
+- Response body compressed in gzip.
