@@ -36,3 +36,29 @@ To compile and run the server:
 ```bash
 cargo build
 ./run.sh --directory /tmp/
+
+## Example Requests
+ 
+ ### GET /echo/{str}
+
+ ```bash
+curl -v -H "Accept-Encoding: gzip" http://localhost:4221/echo/abc
+
+### GET /user-agent
+```bash
+curl -v -H "User-Agent: MyTestAgent" http://localhost:4221/user-agent
+### GET /files/{filename}
+ ```bash
+ curl -v http://localhost:4221/files/filename.txt
+
+### POST /files/{filename}
+ ```bash
+curl -v --data "File content" -H "Content-Type: application/octet-stream" http://localhost:4221/files/new_file.txt
+
+
+## Example Compressed Request
+If the request contains Accept-Encoding: gzip:
+
+```bash
+curl -v -H "Accept-Encoding: gzip" http://localhost:4221/echo/abc
+
