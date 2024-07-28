@@ -17,3 +17,9 @@ The HTTP server implemented in this project listens on port `4221` and handles v
 3. **GET /files/{filename}**
    - Searches for and returns the file specified by `{filename}` in the directory provided as an argument when starting the server.
    - The response contains the file as an octet stream and the `Content-Type: application/octet-stream` header.
+
+4. **POST /files/{filename}**
+   - Creates a new file with the name `{filename}` in the specified directory.
+   - The file content is the body of the request.
+
+   
