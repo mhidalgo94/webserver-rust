@@ -10,3 +10,10 @@ The HTTP server implemented in this project listens on port `4221` and handles v
 1. **GET /echo/{str}**
    - Responds with the `{str}` text received in the URL.
    - If the request contains the header `Accept-Encoding: gzip`, the response is compressed using gzip and the `Content-Encoding: gzip` header is added.
+
+2. **GET /user-agent**
+   - Responds with the value of the `User-Agent` header from the request.
+
+3. **GET /files/{filename}**
+   - Searches for and returns the file specified by `{filename}` in the directory provided as an argument when starting the server.
+   - The response contains the file as an octet stream and the `Content-Type: application/octet-stream` header.
