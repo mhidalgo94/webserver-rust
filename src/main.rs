@@ -71,6 +71,15 @@ fn handle_client(mut stream:TcpStream){
         }    
     }
 
+    // Check for gzip in accept_encoding
+    if let Some(encodings) = &accept_encoding {
+        if encodings.split(',').any(|e| e.trim() == "gzip") {
+            content_encoding = Some("gzip");
+        }
+    }
+
+
+
     // Handle the request based on the path and method
     if method == &"GET" {
         if path == &"/" {
