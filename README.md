@@ -22,4 +22,17 @@ The HTTP server implemented in this project listens on port `4221` and handles v
    - Creates a new file with the name `{filename}` in the specified directory.
    - The file content is the body of the request.
 
-   
+## Project Usage
+
+### Prerequisites
+
+- Rust (installed via `rustup`)
+- Cargo (Rust package manager)
+
+### Compilation and Execution
+
+To compile and run the server:
+
+```bash
+cargo build
+./run.sh --directory /tmp/
